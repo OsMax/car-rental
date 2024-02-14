@@ -14,6 +14,7 @@ function App() {
         <Route path="cars" element={CarsPage} />
         <Route path="favorite" element={FavoritePage} />
       </Route>
+      <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
 }
