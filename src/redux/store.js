@@ -20,20 +20,14 @@ const carsConfig = {
 
 const carsPersistReducer = persistReducer(carsConfig, carsReducer);
 
-const rootReducer = combineReducers({
-  cars: carsPersistReducer,
-});
-
-const middleware = (getDefaultMiddleware) =>
-  getDefaultMiddleware({
-    serializableCheck: {
-      ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-    },
-  });
-
 export const store = configureStore({
-  reducer: rootReducer,
-  middleware,
+  reducer: { cars: carsPersistReducer },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }),
 });
 
 export const persistor = persistStore(store);
