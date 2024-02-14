@@ -1,28 +1,20 @@
-import logo from "./logo.svg";
-import "./App.css";
-
 import { lazy, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Routes, Route, Navigate } from "react-router-dom";
 
+const HomePage = lazy(() => import("./pages/HomePage"));
+const CarsPage = lazy(() => import("./pages/CarsPage"));
+const FavoritePage = lazy(() => import("./pages/FavoritePage"));
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/">
+        <Route index element={HomePage} />
+        <Route path="cars" element={CarsPage} />
+        <Route path="favorite" element={FavoritePage} />
+      </Route>
+    </Routes>
   );
 }
 
