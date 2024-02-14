@@ -8,14 +8,17 @@ const FavoritePage = lazy(() => import("./pages/FavoritePage"));
 
 function App() {
   return (
-    <Routes>
-      <Route path="/">
-        <Route index element={HomePage} />
-        <Route path="cars" element={CarsPage} />
-        <Route path="favorite" element={FavoritePage} />
-      </Route>
-      <Route path="*" element={<Navigate to="/" replace />} />
-    </Routes>
+    <div>
+      tratata
+      <Routes>
+        <Route path="/">
+          <Route index element={HomePage} />
+          <Route path="cars" element={CarsPage} />
+          <Route path="favorite" element={FavoritePage} />
+        </Route>
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </div>
   );
 }
 
