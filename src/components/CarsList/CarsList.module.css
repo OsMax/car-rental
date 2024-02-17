@@ -1,5 +1,7 @@
 .carsList {
+  justify-content: center;
+  list-style: none;
   display: flex;
   flex-wrap: wrap;
-  gap: 29px;
+  gap: 9px;
 }

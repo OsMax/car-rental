@@ -1,4 +1,7 @@
 .item {
+  padding: 10px;
+}
+.carContainer {
   width: 274px;
   height: 426px;
   border: solid 1px gray;

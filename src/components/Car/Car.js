@@ -18,22 +18,27 @@ export const Car = ({ car }) => {
     e.preventDefault();
     const check = favoritCars.find(({ id }) => id === car.id);
     if (!check) dispatch(addCar(car));
-    else dispatch(removeCar(car.id));
+    else {
+      dispatch(removeCar(car.id));
+      setLike(false);
+    }
   };
   return (
     <li className={css.item}>
-      <button onClick={putLike} className={like && css.like}>
-        like
-      </button>
-      <img
-        className={css.img}
-        src={car.img ? car.img : require("../../images/no-img.jpg")}
-        alt={car.model}
-      />
-      <h3>
-        {car.make} {car.model} {car.year}
-      </h3>
-      <p>{car.address}</p>
+      <div className={css.carContainer}>
+        <button onClick={putLike} className={like && css.like}>
+          like
+        </button>
+        <img
+          className={css.img}
+          src={car.img ? car.img : require("../../images/no-img.jpg")}
+          alt={car.model}
+        />
+        <h3>
+          {car.make} {car.model} {car.year}
+        </h3>
+        <p>{car.address}</p>
+      </div>
     </li>
   );
 };
