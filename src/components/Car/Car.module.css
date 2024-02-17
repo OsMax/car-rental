@@ -2,9 +2,10 @@
   padding: 10px;
 }
 .carContainer {
-  width: 274px;
+  position: relative;
+  max-width: 274px;
   height: 426px;
-  border: solid 1px gray;
+  border: solid 1px rgba(0, 0, 0, 0);
   border-radius: 14px;
   overflow: hidden;
 }
@@ -12,6 +13,25 @@
   width: 100%;
   height: 268px;
 }
+
+.likeButton {
+  margin: 0;
+  float: 0;
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background-color: transparent;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 0;
+}
+
 .like {
-  background-color: blue;
+  background-image: url("../../images/like.svg");
+}
+.unlike {
+  background-image: url("../../images/unlike.svg");
 }
