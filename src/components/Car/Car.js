@@ -2,10 +2,17 @@ import css from "./Car.module.css";
 import { addCar, removeCar } from "redux/favoriteSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { selectFavorites } from "redux/selectors";
+import { useState, useEffect } from "react";
 
 export const Car = ({ car }) => {
   const dispatch = useDispatch();
   const favoritCars = useSelector(selectFavorites);
+  const [like, setLike] = useState(false);
+
+  useEffect(() => {
+    const check = favoritCars.find(({ id }) => id === car.id);
+    if (check) setLike(true);
+  });
 
   const putLike = (e) => {
     e.preventDefault();
@@ -15,7 +22,9 @@ export const Car = ({ car }) => {
   };
   return (
     <li className={css.item}>
-      <button onClick={putLike}>like</button>
+      <button onClick={putLike} className={like && css.like}>
+        like
+      </button>
       <img
         className={css.img}
         src={car.img ? car.img : require("../../images/no-img.jpg")}

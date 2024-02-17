@@ -1,16 +1,29 @@
 import { useState, useEffect } from "react";
 import { getCarsByPage } from "../../API/carsAPI";
 import { Car } from "../../components/Car/Car";
-import css from "./CarsPage.module.css";
+import { CarsList } from "../../components/CarsList/CarsList";
 
 const CarsPage = () => {
   const [cars, setCars] = useState([]);
+  const [page, setPage] = useState(1);
+  const [showMore, setShowMore] = useState(false);
 
   useEffect(() => {
-    getCarsByPage(1).then((data) => {
+    getCars();
+  }, [page]);
+
+  function getCars() {
+    getCarsByPage(page).then((data) => {
+      console.log(data.length);
+      if (data.length === 12) setShowMore(true);
+      else setShowMore(false);
       setCars([...cars, ...data]);
     });
-  }, []);
+  }
+
+  const onShowMore = () => {
+    setPage(page + 1);
+  };
 
   return (
     <>
@@ -30,12 +43,8 @@ const CarsPage = () => {
         </form>
       </div>
       <div>
-        <ul className={css.carsList}>
-          {cars.length > 0 &&
-            cars.map((car) => {
-              return <Car key={car.id} car={car} />;
-            })}
-        </ul>
+        {cars.length > 0 && <CarsList cars={cars} />}
+        {showMore && <button onClick={onShowMore}>SHOW MORE</button>}
       </div>
     </>
   );

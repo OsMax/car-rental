@@ -1,5 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { selectFavorites } from "redux/selectors";
+import { CarsList } from "components/CarsList/CarsList";
 
 const FavoritePage = () => {
   const cars = useSelector(selectFavorites);
@@ -7,9 +8,7 @@ const FavoritePage = () => {
   return (
     <>
       <div>
-        {cars.map((car) => {
-          return <p>{car.model}</p>;
-        })}
+        <CarsList cars={cars} />
       </div>
     </>
   );
