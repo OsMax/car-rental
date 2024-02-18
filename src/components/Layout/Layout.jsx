@@ -10,7 +10,7 @@ const Layout = () => {
         <NavLink className={css.link} to="/">
           Home
         </NavLink>
-        <NavLink className={css.link} to="/cars">
+        <NavLink className={css.link} to="/catalog">
           Catalog
         </NavLink>
         <NavLink className={css.link} to="/favorite">

@@ -8,7 +8,7 @@ const HomePage = () => {
       <h1 className={css.homeTitle}>
         Start your unforgettable journey with our <br /> car rental service
       </h1>
-      <NavLink className={css.homeLink} to="/cars">
+      <NavLink className={css.homeLink} to="/catalog">
         Catalog
       </NavLink>
     </div>
