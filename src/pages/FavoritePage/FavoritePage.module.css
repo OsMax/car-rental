@@ -1,8 +1,26 @@
+.stub {
+  height: 60px;
+}
+
 .favorContainer {
-  padding-top: 60px;
+  height: calc(100vh - 60px);
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 5px;
+    background-color: #d7e3ff;
+  }
+  &::-webkit-scrollbar-thumb {
+    width: 12px;
+    border-radius: 5px;
+    background-color: #0b44cd;
+  }
 }
 @media screen and (max-width: 520px) {
+  .stub {
+    height: 160px;
+  }
   .favorContainer {
-    padding-top: 160px;
+    height: calc(100vh - 160px);
   }
 }
