@@ -3,6 +3,7 @@ import { getCarsByPage } from "../../API/carsAPI";
 // import { Car } from "../../components/Car/Car";
 import { CarsList } from "../../components/CarsList/CarsList";
 import { Filter } from "components/Filter/Filter";
+import css from "./CarsPages.module.css";
 
 const CarsPage = () => {
   const [cars, setCars] = useState([]);
@@ -21,7 +22,8 @@ const CarsPage = () => {
     });
   }
 
-  const onShowMore = () => {
+  const onShowMore = (e) => {
+    e.preventDefault();
     setPage(page + 1);
   };
 
@@ -30,9 +32,13 @@ const CarsPage = () => {
       <div>
         <Filter />
       </div>
-      <div>
+      <div className={css.carsContainer}>
         {cars.length > 0 && <CarsList cars={cars} />}
-        {showMore && <button onClick={onShowMore}>SHOW MORE</button>}
+        {showMore && (
+          <button className={css.showMore} onClick={onShowMore}>
+            Load more
+          </button>
+        )}
       </div>
     </>
   );

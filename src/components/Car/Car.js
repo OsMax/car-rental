@@ -29,12 +29,12 @@ export const Car = ({ car }) => {
   const onModalOpen = (e) => {
     if (!modalIsOpen) {
       setModalIsOpen(true);
-      document.body.style.overflow = "hidden";
+      // document.body.style.overflow = "hidden";
     }
   };
   const onModalClose = () => {
     setModalIsOpen(false);
-    document.body.style.overflow = "scroll";
+    // document.body.style.overflow = "scroll";
   };
   return (
     <li className={css.item}>
@@ -45,11 +45,32 @@ export const Car = ({ car }) => {
           src={car.img ? car.img : require("../../images/no-img.jpg")}
           alt={car.model}
         />
-        <h3>
-          {car.make} {car.model} {car.year}
+        <h3 className={css.carTitle}>
+          <span>
+            {car.make} <span className={css.model}>{car.model}</span>,{" "}
+            {car.year}
+          </span>
+          <span>{car.rentalPrice}</span>
         </h3>
-        <p>{car.address}</p>
-        <button onClick={onModalOpen}>Show info</button>
+        <p className={css.carInfo}>
+          <span>{car.address.split(",")[1]}</span>
+          <span>|</span>
+          <span>{car.address.split(",")[2]}</span>
+          <span>|</span>
+          <span>{car.rentalCompany}</span>
+        </p>
+        <p className={css.carInfo}>
+          <span>{car.type}</span>
+          <span>|</span>
+          <span>{car.model}</span>
+          <span>|</span>
+          <span>{car.mileage}</span>
+          <span>|</span>
+          <span>{car.accessories[0]}</span>
+        </p>
+        <button className={css.learnMore} onClick={onModalOpen}>
+          Learn more
+        </button>
         {modalIsOpen && <Modal onModalClose={onModalClose} car={car} />}
       </div>
     </li>
