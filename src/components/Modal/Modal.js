@@ -7,9 +7,7 @@ const modalRoot = document.querySelector("#modal-root");
 
 const Modal = ({ onModalClose, car }) => {
   const onEscape = (e) => {
-    if (e.code === "Escape") {
-      onModalClose();
-    }
+    onModalClose(e);
   };
 
   useEffect(() => {
@@ -22,9 +20,13 @@ const Modal = ({ onModalClose, car }) => {
   }, []);
 
   return createPortal(
-    <div className={css.overlay}>
+    <div className={css.overlay} close="close" onClick={onModalClose}>
       <div className={css.modal}>
-        <button className={css.closeModalBtn} onClick={onModalClose}>
+        <button
+          className={css.closeModalBtn}
+          close="close"
+          onClick={onModalClose}
+        >
           X
         </button>
         <div className={css.carContainer}>
@@ -96,7 +98,14 @@ const Modal = ({ onModalClose, car }) => {
             </span>
           </div>
         </div>
-        <button className={css.rentBtn}>Rental car</button>
+        <button
+          className={css.rentBtn}
+          onClick={() => {
+            window.location.href = "tel:+380730000000";
+          }}
+        >
+          Rental car
+        </button>
       </div>
     </div>,
     modalRoot

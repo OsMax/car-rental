@@ -29,12 +29,10 @@ export const Car = ({ car }) => {
   const onModalOpen = (e) => {
     if (!modalIsOpen) {
       setModalIsOpen(true);
-      // document.body.style.overflow = "hidden";
     }
   };
-  const onModalClose = () => {
-    setModalIsOpen(false);
-    // document.body.style.overflow = "scroll";
+  const onModalClose = (e) => {
+    if (e.code === "Escape" || e.target.attributes.close) setModalIsOpen(false);
   };
   return (
     <li className={css.item}>
