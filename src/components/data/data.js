@@ -1,4 +1,4 @@
-export const brend = [
+export const brends = [
   "Buick",
   "Volvo",
   "HUMMER",
@@ -10,7 +10,6 @@ export const brend = [
   "Hyundai",
   "MINI",
   "Bentley",
-  "Mercedes-Benz",
   "Aston Martin",
   "Pontiac",
   "Lamborghini",

@@ -26,9 +26,7 @@ const Modal = ({ onModalClose, car }) => {
           className={css.closeModalBtn}
           close="close"
           onClick={onModalClose}
-        >
-          X
-        </button>
+        />
         <div className={css.carContainer}>
           <img
             className={css.img}

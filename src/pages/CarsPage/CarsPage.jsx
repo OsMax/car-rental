@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-import { getCarsByPage } from "../../API/carsAPI";
-// import { Car } from "../../components/Car/Car";
+import { getCarsByPage, getCarsByFilter } from "../../API/carsAPI";
 import { CarsList } from "../../components/CarsList/CarsList";
 import { Filter } from "components/Filter/Filter";
 import css from "./CarsPages.module.css";
@@ -27,17 +26,24 @@ const CarsPage = () => {
     setPage(page + 1);
   };
 
+  const onFilterSubmit = (filter) => {
+    setShowMore(false);
+    getCarsByFilter(filter).then((data) => setCars([...data]));
+  };
+
   return (
     <>
       <div className={css.filterComtainer}>
-        <Filter />
+        <Filter onFilterSubmit={onFilterSubmit} />
       </div>
       <div className={css.carsContainer}>
         {cars.length > 0 && <CarsList cars={cars} />}
         {showMore && (
-          <button className={css.showMore} onClick={onShowMore}>
-            Load more
-          </button>
+          <div className={css.showMoreCont}>
+            <button className={css.showMore} onClick={onShowMore}>
+              Load more
+            </button>
+          </div>
         )}
       </div>
     </>
