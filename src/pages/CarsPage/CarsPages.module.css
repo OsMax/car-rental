@@ -3,7 +3,7 @@
 }
 
 .carsContainer {
-  height: calc(100vh - 40px);
+  height: calc(100vh - 160px);
   display: flex;
   flex-direction: column;
   /* gap: 100px; */
@@ -23,7 +23,7 @@
 .showMoreCont {
   display: flex;
   justify-content: center;
-  padding-bottom: 200px;
+  padding-bottom: 60px;
 }
 
 .showMore {
@@ -42,8 +42,27 @@
   cursor: pointer;
 }
 
+@media screen and (max-width: 800px) {
+  .carsContainer {
+    height: calc(100vh - 210px);
+  }
+}
+@media screen and (max-width: 646px) {
+  .carsContainer {
+    height: calc(100vh - 230px);
+  }
+}
+
 @media screen and (max-width: 520px) {
   .filterComtainer {
     padding-top: 160px;
+  }
+  .carsContainer {
+    height: calc(100vh - 310px);
+  }
+}
+@media screen and (max-width: 480px) {
+  .carsContainer {
+    height: calc(100vh - 360px);
   }
 }
