@@ -36,3 +36,9 @@
 .showMore:focus {
   color: #0b44cd;
 }
+
+@media screen and (max-width: 520px) {
+  .filterComtainer {
+    padding-top: 160px;
+  }
+}

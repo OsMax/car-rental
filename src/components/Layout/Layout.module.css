@@ -3,6 +3,7 @@
   display: flex;
   flex-wrap: wrap;
   column-gap: 40px;
+  row-gap: 4px;
   justify-content: center;
   position: fixed;
   width: 100%;
@@ -15,6 +16,7 @@
   font-weight: 500;
   border: solid 0px transparent;
   border-radius: 32px;
+  text-align: center;
 
   background-color: #3470ff;
   color: #ffffff;
@@ -24,4 +26,10 @@
 .link:focus {
   text-decoration: underline;
   background-color: #0b44cd;
+}
+
+@media screen and (max-width: 520px) {
+  .link {
+    width: 80%;
+  }
 }
