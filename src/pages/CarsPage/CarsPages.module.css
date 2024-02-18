@@ -1,3 +1,7 @@
+.filterComtainer {
+  padding-top: 60px;
+}
+
 .carsContainer {
   height: calc(100vh - 40px);
   display: flex;

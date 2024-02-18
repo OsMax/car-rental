@@ -29,7 +29,7 @@ const CarsPage = () => {
 
   return (
     <>
-      <div>
+      <div className={css.filterComtainer}>
         <Filter />
       </div>
       <div className={css.carsContainer}>

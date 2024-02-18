@@ -7,10 +7,10 @@ import { Routes, Route, Navigate } from "react-router-dom";
 // const CarsPage = lazy(() => import("./pages/CarsPage/CarsPage"));
 // const FavoritePage = lazy(() => import("./pages/FavoritePage"));
 // const Layout = lazy(() => import("./components/Layout"));
-import HomePage from "pages/HomePage";
+import HomePage from "pages/HomePage/HomePage";
 import CarsPage from "pages/CarsPage/CarsPage";
-import FavoritePage from "pages/FavoritePage";
-import Layout from "components/Layout";
+import FavoritePage from "pages/FavoritePage/FavoritePage";
+import Layout from "components/Layout/Layout";
 
 function App() {
   return (

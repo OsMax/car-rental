@@ -1,0 +1,27 @@
+.header {
+  padding: 4px 0;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 40px;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+}
+
+.link {
+  text-decoration: none;
+  padding: 12px 24px;
+  font-size: 22px;
+  font-weight: 500;
+  border: solid 0px transparent;
+  border-radius: 32px;
+
+  background-color: #3470ff;
+  color: #ffffff;
+}
+
+.link:hover,
+.link:focus {
+  text-decoration: underline;
+  background-color: #0b44cd;
+}
