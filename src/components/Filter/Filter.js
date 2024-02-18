@@ -13,6 +13,11 @@ export const Filter = ({ onFilterSubmit }) => {
     prices.push(<option key={i} value={`$${i}`}>{`$${i}`}</option>);
   }
 
+  const checkFilter = () => {
+    if (brend || price || from || to) return true;
+    else return false;
+  };
+
   const onChange = (e) => {
     switch (e.target.name) {
       case "brend": {
@@ -38,8 +43,18 @@ export const Filter = ({ onFilterSubmit }) => {
 
   const onFormSubmit = (e) => {
     e.preventDefault();
-    const filter = { brend, price, from, to };
-    onFilterSubmit(filter);
+    if (e.nativeEvent.submitter.name === "search") {
+      const filter = { brend, price, from, to };
+      onFilterSubmit(filter);
+    }
+    if (e.nativeEvent.submitter.name === "clear") {
+      e.currentTarget.reset();
+      setBrend("");
+      setPrice("");
+      setFrom(0);
+      setTo(0);
+      onFilterSubmit(null);
+    }
   };
 
   return (
@@ -100,8 +115,18 @@ export const Filter = ({ onFilterSubmit }) => {
               onChange={onChange}
             />
           </div>
+          {checkFilter() && (
+            <button
+              type="submit"
+              name="clear"
+              title="clear form"
+              className={css.clearFilter}
+            >
+              x
+            </button>
+          )}
         </label>
-        <button type="submit" className={css.filterBtn}>
+        <button type="submit" name="search" className={css.filterBtn}>
           Search
         </button>
       </form>

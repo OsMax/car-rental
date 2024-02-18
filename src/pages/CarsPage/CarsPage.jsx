@@ -17,7 +17,8 @@ const CarsPage = () => {
     getCarsByPage(page).then((data) => {
       if (data.length === 12) setShowMore(true);
       else setShowMore(false);
-      setCars([...cars, ...data]);
+      if (page === 1) setCars([...data]);
+      else setCars([...cars, ...data]);
     });
   }
 
@@ -28,7 +29,13 @@ const CarsPage = () => {
 
   const onFilterSubmit = (filter) => {
     setShowMore(false);
-    getCarsByFilter(filter).then((data) => setCars([...data]));
+    setPage(1);
+    if (filter) {
+      getCarsByFilter(filter).then((data) => setCars([...data]));
+    } else {
+      setCars([]);
+      getCars();
+    }
   };
 
   return (
