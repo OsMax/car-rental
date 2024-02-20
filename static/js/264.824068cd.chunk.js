@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkcar_rental=self.webpackChunkcar_rental||[]).push([[264],{264:(e,a,r)=>{r.r(a),r.d(a,{default:()=>o});const s="HomePage_homeContainer__hAr7F",c="HomePage_homeTitle__Pqi39",n="HomePage_nomeTitlrSpan__i+KUh";var t=r(496);const o=()=>(0,t.jsx)("div",{className:s,children:(0,t.jsxs)("h1",{className:c,children:["Start your unforgettable journey with our ",(0,t.jsx)("br",{})," car rental service",(0,t.jsx)("br",{}),(0,t.jsx)("span",{className:n,children:"Go to catalog and choice a car"})]})})}}]);
+//# sourceMappingURL=264.824068cd.chunk.js.map
