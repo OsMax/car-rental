@@ -28,6 +28,7 @@
   background-position: center;
   background-repeat: no-repeat;
   border: 0;
+  cursor: pointer;
 }
 
 .like {
@@ -78,6 +79,7 @@
   border-radius: 12px;
   background-color: #3470ff;
   color: #ffffff;
+  cursor: pointer;
 }
 
 .learnMore:hover,
