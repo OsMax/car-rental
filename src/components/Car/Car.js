@@ -14,7 +14,7 @@ export const Car = ({ car }) => {
   useEffect(() => {
     const check = favoritCars.find(({ id }) => id === car.id);
     if (check) setLike(css.like);
-  });
+  }, []);
 
   const putLike = (e) => {
     e.preventDefault();
