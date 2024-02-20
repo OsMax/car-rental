@@ -34,7 +34,7 @@ const CarsPage = () => {
     setShowMore(false);
     setPage(1);
     if (filter) {
-      setSearchParams(filter);
+      // setSearchParams(filter);
       getCarsAPI(0, filter).then((data) => setCars([...data]));
     } else {
       setCars([]);

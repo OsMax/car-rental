@@ -14,6 +14,7 @@ export const Car = ({ car }) => {
   useEffect(() => {
     const check = favoritCars.find(({ id }) => id === car.id);
     if (check) setLike(css.like);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const putLike = (e) => {
