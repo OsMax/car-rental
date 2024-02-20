@@ -1,4 +1,4 @@
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { selectFavorites } from "redux/selectors";
 import { CarsList } from "components/CarsList/CarsList";
 import css from "./FavoritePage.module.css";
