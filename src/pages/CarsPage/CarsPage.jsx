@@ -1,20 +1,22 @@
 import { useState, useEffect } from "react";
-import { getCarsByPage, getCarsByFilter } from "../../API/carsAPI";
+import { getCarsAPI } from "../../API/carsAPI";
 import { CarsList } from "../../components/CarsList/CarsList";
 import { Filter } from "components/Filter/Filter";
 import css from "./CarsPages.module.css";
+import { useSearchParams } from "react-router-dom";
 
 const CarsPage = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
   const [cars, setCars] = useState([]);
   const [page, setPage] = useState(1);
   const [showMore, setShowMore] = useState(false);
 
   useEffect(() => {
-    getCars();
+    getCars(page);
   }, [page]);
 
   function getCars() {
-    getCarsByPage(page).then((data) => {
+    getCarsAPI(page).then((data) => {
       if (data.length === 12) setShowMore(true);
       else setShowMore(false);
       if (page === 1) setCars([...data]);
@@ -31,7 +33,8 @@ const CarsPage = () => {
     setShowMore(false);
     setPage(1);
     if (filter) {
-      getCarsByFilter(filter).then((data) => setCars([...data]));
+      setSearchParams(filter);
+      getCarsAPI(0, filter).then((data) => setCars([...data]));
     } else {
       setCars([]);
       getCars();
