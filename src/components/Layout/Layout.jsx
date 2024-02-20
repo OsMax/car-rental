@@ -19,9 +19,9 @@ const Layout = () => {
       </header>
       <main className={css.main}>
         <div>
-          <Suspense fallback={<Loader />}>
-            <Outlet />
-          </Suspense>
+          {/* <Suspense fallback={<Loader />}> */}
+          <Outlet />
+          {/* </Suspense> */}
         </div>
       </main>
     </>
