@@ -1,6 +1,6 @@
-import { Suspense } from "react";
+// import { Suspense } from "react";
 import { NavLink, Outlet } from "react-router-dom";
-import Loader from "components/Loader/Loader";
+// import Loader from "components/Loader/Loader";
 import css from "./Layout.module.css";
 
 const Layout = () => {
