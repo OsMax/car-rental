@@ -1,4 +1,6 @@
 .loader {
+  position: relative;
+  top: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,50 +10,10 @@
   height: 28px;
 }
 
-.item1 {
-  width: 24px;
-  height: 12px;
-  background-color: #9dc162;
-  animation-name: load;
-  animation-duration: 1500ms;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  animation-delay: 0ms;
-  border-radius: 5px;
-}
-.item2 {
-  width: 24px;
-  height: 12px;
-  background-color: #9dc162;
-  animation-name: load;
-  animation-duration: 1500ms;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  animation-delay: 300ms;
-  border-radius: 5px;
-}
-.item3 {
-  width: 24px;
-  height: 12px;
-  background-color: #9dc162;
-  animation-name: load;
-  animation-duration: 1500ms;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  animation-delay: 600ms;
-  border-radius: 5px;
-}
-.item4 {
-  width: 24px;
-  height: 12px;
-  background-color: #9dc162;
-  animation-name: load;
-  animation-duration: 1500ms;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  animation-delay: 900ms;
-  border-radius: 5px;
-}
+.item1,
+.item2,
+.item3,
+.item4,
 .item5 {
   width: 24px;
   height: 12px;
@@ -60,8 +22,23 @@
   animation-duration: 1500ms;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
-  animation-delay: 1200ms;
   border-radius: 5px;
+}
+
+.item1 {
+  animation-delay: 0ms;
+}
+.item2 {
+  animation-delay: 300ms;
+}
+.item3 {
+  animation-delay: 600ms;
+}
+.item4 {
+  animation-delay: 900ms;
+}
+.item5 {
+  animation-delay: 1200ms;
 }
 @keyframes load {
   0% {
@@ -73,5 +50,11 @@
   }
   60% {
     height: 12px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .loader {
+    top: 160px;
   }
 }
