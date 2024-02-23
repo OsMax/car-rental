@@ -20,8 +20,10 @@ export const Car = ({ car }) => {
   const putLike = (e) => {
     e.preventDefault();
     const check = favoritCars.find(({ id }) => id === car.id);
-    if (!check) dispatch(addCar(car));
-    else {
+    if (!check) {
+      setLike(css.like);
+      dispatch(addCar(car));
+    } else {
       dispatch(removeCar(car.id));
       setLike(css.unlike);
     }

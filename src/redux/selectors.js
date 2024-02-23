@@ -1,1 +1,2 @@
-export const selectFavorites = (state) => state.persistedReducer.cars.favorite;
+export const selectFavorites = (state) =>
+  state.persistedReducer.favoriteCars.favorite;

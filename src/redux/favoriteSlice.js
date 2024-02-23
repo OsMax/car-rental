@@ -19,4 +19,4 @@ const favoriteSlice = createSlice({
 });
 
 export const { addCar, removeCar } = favoriteSlice.actions;
-export const carReduser = favoriteSlice.reducer;
+export default favoriteSlice.reducer;
