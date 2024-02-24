@@ -21,6 +21,7 @@ const CarsPage = () => {
 
   const onShowMore = (e) => {
     e.preventDefault();
+    if (cars.length < page * 12) setShowMore(false);
     setPage(page + 1);
   };
 
