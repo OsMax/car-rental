@@ -12,8 +12,9 @@ import {
 import storage from "redux-persist/lib/storage";
 
 import favoriteCars from "./favoriteSlice";
+import cars from "./carsSlice";
 
-const rootReduser = combineReducers({ favoriteCars });
+const rootReduser = combineReducers({ favoriteCars, cars });
 
 const persistConfig = {
   key: "favorite",

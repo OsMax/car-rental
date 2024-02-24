@@ -1,29 +1,22 @@
 import { useState, useEffect } from "react";
-import { getCarsAPI } from "../../API/carsAPI";
+import { useSelector, useDispatch } from "react-redux";
 import { CarsList } from "../../components/CarsList/CarsList";
 import { Filter } from "components/Filter/Filter";
+import { selectCars } from "redux/selectors";
+import { getCars } from "redux/operetion";
 import css from "./CarsPages.module.css";
-// import { useSearchParams } from "react-router-dom";
 
 const CarsPage = () => {
-  // const [searchParams, setSearchParams] = useSearchParams();
-  const [cars, setCars] = useState([]);
+  // document.getElementById("catalogLink").classList.add("inFocus");
+
+  const dispatch = useDispatch();
   const [page, setPage] = useState(1);
-  const [showMore, setShowMore] = useState(false);
-
+  const [showMore, setShowMore] = useState(true);
+  const [filter, setFilter] = useState(null);
+  const cars = useSelector(selectCars);
   useEffect(() => {
-    getCars(page);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [page]);
-
-  function getCars() {
-    getCarsAPI(page).then((data) => {
-      if (data.length === 12) setShowMore(true);
-      else setShowMore(false);
-      if (page === 1) setCars([...data]);
-      else setCars([...cars, ...data]);
-    });
-  }
+    dispatch(getCars({ page, filter }));
+  }, [page, filter]);
 
   const onShowMore = (e) => {
     e.preventDefault();
@@ -32,14 +25,8 @@ const CarsPage = () => {
 
   const onFilterSubmit = (filter) => {
     setShowMore(false);
+    setFilter(filter);
     setPage(1);
-    if (filter) {
-      // setSearchParams(filter);
-      getCarsAPI(0, filter).then((data) => setCars([...data]));
-    } else {
-      setCars([]);
-      getCars();
-    }
   };
 
   return (

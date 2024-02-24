@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { getCars } from "./operetion";
 
 const initialState = {
-  cars: null,
+  cars: [],
 };
 
 const carsSlice = createSlice({
@@ -10,12 +10,14 @@ const carsSlice = createSlice({
   initialState,
   extraReducers: (builder) => {
     builder
-
-      .addCase(getCars.pending, (state) => {
-        console.log("pending");
-      })
+      .addCase(getCars.pending, (state) => {})
       .addCase(getCars.fulfilled, (state, { payload }) => {
-        console.log({ payload });
+        const { data, page } = payload;
+        if (page === 1) {
+          state.cars = data;
+        } else {
+          state.cars = [...state.cars, ...data];
+        }
       })
       .addCase(getCars.rejected, (state, { payload }) => {
         console.log("ERROR!!!");

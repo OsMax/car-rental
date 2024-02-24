@@ -5,12 +5,12 @@ axios.defaults.baseURL = "https://64e1615450713530432d1458.mockapi.io/adverts";
 
 export const getCars = createAsyncThunk(
   "cars/getCars",
-  async (page, filter, thunkAPI) => {
+  async ({ page, filter }, thunkAPI) => {
     try {
-      if (!filter && page) {
+      if (!filter) {
         const url = `?page=${page}&limit=12`;
         const { data } = await axios.get(url);
-        return data;
+        return { data, page };
       }
 
       let url = `?`;
@@ -32,7 +32,7 @@ export const getCars = createAsyncThunk(
       if (filter.to) {
         tempData = tempData.filter((car) => car.mileage <= filter.to);
       }
-      return tempData;
+      return { data: tempData, page };
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
