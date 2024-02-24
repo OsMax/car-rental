@@ -7,6 +7,10 @@ export const getCars = createAsyncThunk(
   "cars/getCars",
   async ({ page, filter }, thunkAPI) => {
     try {
+      if (page === 0) {
+        const { data } = await axios.get();
+        return { data, page };
+      }
       if (!filter) {
         const url = `?page=${page}&limit=12`;
         const { data } = await axios.get(url);

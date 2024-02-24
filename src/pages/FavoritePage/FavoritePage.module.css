@@ -16,6 +16,14 @@
     background-color: #0b44cd;
   }
 }
+
+.favorContainer h4 {
+  font-size: 32px;
+  color: #0b44cd;
+  text-align: center;
+  text-shadow: 3px 3px 5px #3470ff;
+}
+
 @media screen and (max-width: 520px) {
   .stub {
     height: 160px;

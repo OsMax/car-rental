@@ -13,7 +13,7 @@ const carsSlice = createSlice({
       .addCase(getCars.pending, (state) => {})
       .addCase(getCars.fulfilled, (state, { payload }) => {
         const { data, page } = payload;
-        if (page === 1) {
+        if (page <= 1) {
           state.cars = data;
         } else {
           state.cars = [...state.cars, ...data];

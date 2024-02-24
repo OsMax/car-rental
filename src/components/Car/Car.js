@@ -12,17 +12,17 @@ export const Car = ({ car }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   useEffect(() => {
-    const check = favoritCars.find(({ id }) => id === car.id);
+    const check = favoritCars.find((id) => id === car.id);
     if (check) setLike(css.like);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const putLike = (e) => {
     e.preventDefault();
-    const check = favoritCars.find(({ id }) => id === car.id);
+    const check = favoritCars.find((id) => id === car.id);
     if (!check) {
       setLike(css.like);
-      dispatch(addCar(car));
+      dispatch(addCar(car.id));
     } else {
       dispatch(removeCar(car.id));
       setLike(css.unlike);
