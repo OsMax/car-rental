@@ -33,10 +33,10 @@ const CarsPage = () => {
 
   return (
     <>
-      <div className={css.filterComtainer}>
+      <section className={css.filterComtainer}>
         <Filter onFilterSubmit={onFilterSubmit} />
-      </div>
-      <div className={css.carsContainer}>
+      </section>
+      <section className={css.carsContainer}>
         {cars.length > 0 && <CarsList cars={cars} />}
         {showMore && (
           <div className={css.showMoreCont}>
@@ -45,7 +45,7 @@ const CarsPage = () => {
             </button>
           </div>
         )}
-      </div>
+      </section>
     </>
   );
 };

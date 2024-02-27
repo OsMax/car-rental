@@ -20,10 +20,10 @@ const FavoritePage = () => {
   return (
     <>
       <div className={css.stub}></div>
-      <div className={css.favorContainer}>
+      <section className={css.favorContainer}>
         <CarsList cars={cars} />
         {cars.length === 0 && <h4>There are no car in favorites</h4>}
-      </div>
+      </section>
     </>
   );
 };
