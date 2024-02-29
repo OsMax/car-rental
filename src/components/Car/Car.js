@@ -41,34 +41,29 @@ export const Car = ({ car }) => {
     <li className={css.item}>
       <div className={css.carContainer}>
         <button onClick={putLike} className={css.likeButton + " " + like} />
-        <img
-          className={css.img}
-          src={car.img ? car.img : require("../../images/no-img.jpg")}
-          alt={car.model}
-        />
-        <h3 className={css.carTitle}>
-          <span>
-            {car.make} <span className={css.model}>{car.model}</span>,{" "}
-            {car.year}
-          </span>
-          <span>{car.rentalPrice}</span>
-        </h3>
-        <p className={css.carInfo}>
-          <span>{car.address.split(",")[1]}</span>
-          <span>|</span>
-          <span>{car.address.split(",")[2]}</span>
-          <span>|</span>
-          <span>{car.rentalCompany}</span>
-        </p>
-        <p className={css.carInfo}>
-          <span>{car.type}</span>
-          <span>|</span>
-          <span>{car.model}</span>
-          <span>|</span>
-          <span>{car.mileage}</span>
-          <span>|</span>
-          <span>{car.accessories[0]}</span>
-        </p>
+        <div>
+          <img
+            className={css.img}
+            src={car.img ? car.img : require("../../images/no-img.jpg")}
+            alt={car.model}
+          />
+          <h3 className={css.carTitle}>
+            <span>
+              {car.make} <span className={css.model}>{car.model}</span>,{" "}
+              {car.year}
+            </span>
+            <span>{car.rentalPrice}</span>
+          </h3>
+          <ul className={css.carInfo}>
+            <li>{car.address.split(",")[1]}</li>
+            <li>{car.address.split(",")[2]}</li>
+            <li>{car.rentalCompany}</li>
+            <li>{car.type}</li>
+            <li>{car.model}</li>
+            <li>{car.mileage}</li>
+            <li>{car.accessories[0]}</li>
+          </ul>
+        </div>
         <button className={css.learnMore} onClick={onModalOpen}>
           Learn more
         </button>

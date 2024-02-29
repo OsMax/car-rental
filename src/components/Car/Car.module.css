@@ -4,6 +4,9 @@
 }
 .carContainer {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   max-width: 274px;
   height: 426px;
 }
@@ -55,7 +58,8 @@
 
 .carInfo {
   display: flex;
-  gap: 6px;
+  flex-wrap: wrap;
+  gap: 4px;
   width: 100%;
   overflow: hidden;
   margin-top: 8px;
@@ -64,12 +68,15 @@
   line-height: 1.5;
   color: rgba(18, 20, 23, 0.5);
 }
-.carInfo span {
+/* .carInfo span {
   white-space: nowrap;
+} */
+.carInfo li:not(:last-child)::after {
+  content: " |";
 }
 
 .learnMore {
-  margin-top: 28px;
+  /* margin-top: 28px; */
   width: 100%;
   padding: 12px;
   font-size: 14px;
