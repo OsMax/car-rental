@@ -9,17 +9,19 @@ const Layout = () => {
   return (
     <>
       <header className={css.header}>
-        <nav>
-          <NavLink className={setAtive} to="/">
-            Home
-          </NavLink>
-          <NavLink className={setAtive} to="/catalog">
-            Catalog
-          </NavLink>
-          <NavLink className={setAtive} to="/favorite">
-            Favorite
-          </NavLink>
-        </nav>
+        <section>
+          <nav>
+            <NavLink className={setAtive} to="/">
+              Home
+            </NavLink>
+            <NavLink className={setAtive} to="/catalog">
+              Catalog
+            </NavLink>
+            <NavLink className={setAtive} to="/favorite">
+              Favorite
+            </NavLink>
+          </nav>
+        </section>
       </header>
       <main className={css.main}>
         <Suspense fallback={<Loader />}>

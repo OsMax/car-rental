@@ -46,6 +46,7 @@ export const Car = ({ car }) => {
             className={css.img}
             src={car.img ? car.img : require("../../images/no-img.jpg")}
             alt={car.model}
+            title={car.make + " " + car.model + " " + car.year}
           />
           <h3 className={css.carTitle}>
             <span>
