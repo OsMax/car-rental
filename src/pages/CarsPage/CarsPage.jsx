@@ -26,9 +26,13 @@ const CarsPage = () => {
   };
 
   const onFilterSubmit = (filter) => {
-    setShowMore(false);
-    setFilter(filter);
-    setPage(1);
+    if (filter) {
+      setShowMore(false);
+      setFilter(filter);
+      setPage(1);
+    } else {
+      setShowMore(true);
+    }
   };
 
   return (
