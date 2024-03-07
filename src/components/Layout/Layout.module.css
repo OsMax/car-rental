@@ -32,6 +32,8 @@ nav {
 .link:focus {
   text-decoration: underline;
   background-color: #0b44cd;
+  box-shadow: 2px 2px 3px #3470ff;
+  cursor: pointer;
 }
 
 .active {
@@ -45,6 +47,8 @@ nav {
   color: #ffffff;
   text-decoration: underline;
   background-color: #0b44cd;
+  box-shadow: 2px 2px 3px #3470ff;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 520px) {
