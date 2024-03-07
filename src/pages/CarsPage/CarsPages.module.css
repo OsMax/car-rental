@@ -40,6 +40,7 @@
 .showMore:focus {
   color: #0b44cd;
   cursor: pointer;
+  transform: scale(1.02);
 }
 
 @media screen and (max-width: 800px) {

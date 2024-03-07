@@ -83,4 +83,5 @@
   background-color: #0b44cd;
   cursor: pointer;
   box-shadow: 2px 2px 3px #3470ff;
+  transform: scale(1.02);
 }
