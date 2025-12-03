@@ -7,9 +7,7 @@ import { selectCars } from "redux/selectors";
 import { getCars } from "redux/operetion";
 import css from "./CarsPages.module.css";
 
-const CarsPage = () => {
-  // document.getElementById("catalogLink").classList.add("inFocus");
-
+const CarsPage = () => {  
   const dispatch = useDispatch();
   const [page, setPage] = useState(1);
   const [showMore, setShowMore] = useState(true);
